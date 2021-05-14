@@ -14,9 +14,11 @@ jobs:
       run: curl 'https://download.developer.apple.com/Developer_Tools/Xcode_12.5/Xcode_12.5.xip' -o xcode.xip --cookie 's_cc=true; s_fid=1DF25C2DD249D963-37A93CDF52524EF7; s_sq=applesupportglobalprod%3D%2526pid%253Dacs%25253A%25253Akb%25253A%25253Abk%25253A%25253Abk_6609511d223572d4cc779cb7576db994_mchlp1066%252520%252528nl-nl%252529%2526pidt%253D1%2526oid%253Dhttps%25253A%25252F%25252Fsupport.apple.com%25252Fnl-nl%25252Fguide%25252Fmac-help%25252Ftoc%2526ot%253DA; acn01=hVAGOnXxyko1TkkvgMHCNpT1XfXonW1FAAV78Qgig5w=; dslang=NL-NL; myacinfo=DAWTKNV2f6645b6725725d528f287eda0a7438e1aada3bf78f295c55bae45617319ddf41df83a28e9dfc8b3b82e8aaadf58f37ab955c6bfda3a8b95c495493e89ee8e66270f556555252c62c2b57a74059ac428753db425d2219cde85bf29f893ed35bcb77446f4b7b07db48ae44662d3cf4c60d75d32565349aef762a39a71c88dc887e6f8cd2dedbdc65bea023d60688cabfe8e975c094b246f216f9d43c09853b29aeb78910b18fce21fde93f6392261a750322c68be5c85224e972b4ff3602c3463dee6adaf3f5f77684ca7fc7c02795908ebd87c5b8c0ea8eb12bb0079cee3e1be50e32c1f2f94df8ce79c4de3fbd385f9aeee0434596b408d872e8d519d2aee6b298f84c903b2d1ae697136baf3b52771463656638346266316665376663653732343062383337383136313963333165343337326533363639MVRYV2; site=NLD; DSESSIONID=1n4k540mk6jcbcj9ojbchcao0c5nkvi2ld8vcja0l96b3b1teh8d; s_ppv=acs%253A%253Akb%253A%253Abk%253A%253Abk_6609511d223572d4cc779cb7576db994_mchlp1066%2520%2528nl-nl%2529%2C100%2C44%2C1886%2C1440%2C820%2C1440%2C900%2C1%2CP; POD=nl~nl; s_ppvl=acs%253A%253Akb%253A%253Aht%253A%253Aht205280%253A%253AApple%2526%2523x27%253Bs%2520Certificate%2520Transparency%2520policy%2520%2528en-gb%2529%2C77%2C38%2C1777%2C1600%2C820%2C1600%2C900%2C1%2CP; ADCDownloadAuth=ZCmaPlVNRrZDgXZr4UXk%2Bz5UE9Vy4tq4yUbkD8xWhJmAqDMlqca1N6i1NXkP9iLyL4apun6peXC7%0D%0AP3SLXWRsSngoAZSvV4hiyDkwqnu4%2F4VP0jr0fFTySCaNAvFv1YO7HPvbk2c9yavGzm%2BsX%2FkRaHY4%0D%0AGHQLymuyYYR%2BjaOkvvxHA%2BTS%0D%0A; accs=o; geo=NL; XID=f74833cd1bc9a385d31ab5db70997a1f; dssf=1'
     - name: Unxip xcode
       run: xip -x xcode.xip
+    - name: tar 
+      run: tar cfJ xcode.tar.xz Xcode.app
     - name: list files
       run: ls -lah
     - uses: actions/upload-artifact@v2
       with:
        name: xcodeApp
-       path: /Users/runner/work/fastermac/fastermac/xcode.app
+       path: /Users/runner/work/fastermac/fastermac/xcode.tar.xz
