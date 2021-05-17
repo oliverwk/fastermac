@@ -1,4 +1,4 @@
-name: Get xcode.tar
+name: Get xcode
 on: 
   workflow_dispatch:
 defaults:
