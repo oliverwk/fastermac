@@ -21,4 +21,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
        name: xcodeApp
-       path: /Users/runner/work/fastermac/fastermac/xcode.tar.xz
+       path: /Users/runner/work/fastermac/fastermac/xcode.zip
